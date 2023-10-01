@@ -1,0 +1,21 @@
+Statistics:
+===========
+Trinity Version:      Trinity-v2.5.1
+Compiler:             GCC
+Trinity Parameters:   --seqType fq --left data/Illumina//RNAseq_R1.fastq.gz --right data/Illumina//RNAseq_R2.fastq.gz --CPU 12 --max_memory 48G --output analysis/Assembly/Trinity/
+Paired mode
+ Input data
+  Left.fasta    879 MByte
+  Right.fasta   879 MByte
+  Number of unique KMERs: 170061925
+  Number of reads:        12448042 Output data
+  Trinity.fasta 78 MByte
+
+Runtime
+=======
+Start:       Wed Sep 27 18:17:54 CEST 2023
+End:         Thu Sep 28 04:53:13 CEST 2023
+Trinity   38119 seconds
+  Inchworm (phase 1 - read clustering)  1726 seconds
+  Chrysalis (phase 1 - read clustering) 17579 seconds
+  Rest (phase 2 - parallel assembly)       18814 seconds

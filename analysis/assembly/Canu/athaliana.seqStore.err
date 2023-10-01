@@ -1,0 +1,46 @@
+
+Found perl:
+   /opt/cluster/software/Conda/miniconda/3/bin/perl
+   This is perl 5, version 26, subversion 2 (v5.26.2) built for x86_64-linux-thread-multi
+
+Found java:
+   /software/Development/java/1.8.0_242/bin/java
+   openjdk version "1.8.0_242"
+
+Found canu:
+   /mnt/software/UHTS/Assembler/canu/2.1.1/bin/canu
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LANG = "fr_CH.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+   canu 2.1.1
+
+
+Creating library 'ERR3415830' for PacBio raw reads.
+
+               reads               bases
+---------- --------- ------ ------------ ------
+Loaded        331737  84.6%   3245763655  99.1%  /data/courses/assembly-annotation-course/raw_data/Sha/participant_2/pacbio/ERR3415830.fastq.gz
+Short          60568  15.4%     29124244   0.9%
+
+
+Creating library 'ERR3415831' for PacBio raw reads.
+
+               reads               bases
+---------- --------- ------ ------------ ------
+Loaded        321713  85.6%   3062784927  99.1%  /data/courses/assembly-annotation-course/raw_data/Sha/participant_2/pacbio/ERR3415831.fastq.gz
+Short          54193  14.4%     26875645   0.9%
+
+
+All reads processed.
+
+               reads               bases
+---------- --------- ------ ------------ ------
+Loaded        653450  85.1%   6308548582  99.1%
+Short         114761  14.9%     55999889   0.9%
+
+
+Bye.
