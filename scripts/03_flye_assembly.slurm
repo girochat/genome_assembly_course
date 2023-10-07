@@ -23,4 +23,4 @@ module load UHTS/Assembler/flye/2.8.3
 # Launch flye assembly with Pacbio reads
 # --pacbio-raw option : perform assembly with Pacbio regular CLR reads
 # --asm-coverage option : reduced coverage for disjointig assembly (if used need to specify genome size)
-flye --pacbio-raw $DATA_DIR/* --out-dir $OUTPUT_DIR --genome-size 128m --threads=16
+flye --pacbio-raw $DATA_DIR/* --out-dir $OUTPUT_DIR --genome-size 126m --threads=16

@@ -21,6 +21,6 @@ OUTPUT_DIR=$2
 module add UHTS/Assembler/trinityrnaseq/2.5.1
 
 # Perform transcriptome assembly with Trinity (version 2.5.1)
-# --seqType option: FASTQ or FASTA file
+# --seqType option: FASTQ (fq) or FASTA (fa) file
 # --SS_lib_type option: to specify strandedness (RF or FR)
 Trinity --seqType fq --left $DATA_DIR/RNAseq_R1.* --right $DATA_DIR/RNAseq_R2.* --CPU 12 --max_memory 48G --output $OUTPUT_DIR
