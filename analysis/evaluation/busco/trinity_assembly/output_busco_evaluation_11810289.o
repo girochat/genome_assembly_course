@@ -1,0 +1,41 @@
+INFO:	***** Start a BUSCO v4.1.4 analysis, current time: 10/05/2023 02:06:01 *****
+INFO:	Configuring BUSCO with /software/UHTS/Analysis/busco/4.1.4/config/config.ini
+INFO:	Mode is transcriptome
+INFO:	Input file is data/assembly/trinity_assembly.fasta
+INFO:	Downloading information on latest versions of BUSCO data...
+INFO:	Running BUSCO using lineage dataset brassicales_odb10 (eukaryota, 2020-08-05)
+INFO:	Running 1 job(s) on makeblastdb, starting at 10/05/2023 02:06:02
+INFO:	Creating BLAST database with input file
+INFO:	[makeblastdb]	1 of 1 task(s) completed
+INFO:	Running a BLAST search for BUSCOs against created database
+INFO:	Running 1 job(s) on tblastn, starting at 10/05/2023 02:06:05
+INFO:	[tblastn]	1 of 1 task(s) completed
+INFO:	Translating candidate transcripts
+INFO:	***** Run HMMER on gene sequences *****
+INFO:	Running 4525 job(s) on hmmsearch, starting at 10/05/2023 03:39:14
+INFO:	[hmmsearch]	453 of 4525 task(s) completed
+INFO:	[hmmsearch]	905 of 4525 task(s) completed
+INFO:	[hmmsearch]	1358 of 4525 task(s) completed
+INFO:	[hmmsearch]	1810 of 4525 task(s) completed
+INFO:	[hmmsearch]	2263 of 4525 task(s) completed
+INFO:	[hmmsearch]	2715 of 4525 task(s) completed
+INFO:	[hmmsearch]	3168 of 4525 task(s) completed
+INFO:	[hmmsearch]	3620 of 4525 task(s) completed
+INFO:	[hmmsearch]	4073 of 4525 task(s) completed
+INFO:	[hmmsearch]	4525 of 4525 task(s) completed
+INFO:	
+
+	--------------------------------------------------
+	|Results from dataset brassicales_odb10           |
+	--------------------------------------------------
+	|C:72.5%[S:46.0%,D:26.5%],F:4.9%,M:22.6%,n:4596   |
+	|3329	Complete BUSCOs (C)                       |
+	|2112	Complete and single-copy BUSCOs (S)       |
+	|1217	Complete and duplicated BUSCOs (D)        |
+	|226	Fragmented BUSCOs (F)                     |
+	|1041	Missing BUSCOs (M)                        |
+	|4596	Total BUSCO groups searched               |
+	--------------------------------------------------
+INFO:	BUSCO analysis done. Total running time: 5788 seconds
+INFO:	Results written in analysis/evaluation/busco/trinity_assembly
+
