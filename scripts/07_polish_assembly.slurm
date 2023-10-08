@@ -32,4 +32,5 @@ java -Xmx45g -jar /mnt/software/UHTS/Analysis/pilon/1.22/bin/pilon-1.22.jar \
 --genome ${assembly_file} \
 --frags ${ALIGN_DIR}/${filename}_alignment.sorted.bam \
 --outdir ${ASSEMBLY_DIR} --output ${filename}_polished \
---diploid --fix "all" --threads 4  
+--diploid --fix "all" --threads 4
+

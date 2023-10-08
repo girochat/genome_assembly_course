@@ -1,0 +1,428 @@
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 4 threads.
+  opLessThan
+    kmer_db.meryl
+    print to (stdout)
+
+Found 1 command tree.
+Processing file kmer_db.hist
+Start sampling here: 4, 2104528.0
+Next max here: 14, 1.3848107E7
+Stop sampling here: 25, 1778803.0
+Running time : 0 h 0 m 0 sec
+
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 4 threads.
+  opGreaterThan
+    threshold=4
+    kmer_db.meryl
+    output to kmer_db.gt4.meryl
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+Counting 118 (estimated) million canonical 19-mers from 1 input file:
+    sequence-file: canu_assembly.fasta
+
+
+SIMPLE MODE
+-----------
+
+  19-mers
+    -> 274877906944 entries for counts up to 65535.
+    -> 4096 Gbits memory used
+
+  124229388 input bases
+    -> expected max count of 496917, needing 4 extra bits.
+    -> 1024 Gbits memory used
+
+  640 GB memory needed
+
+
+COMPLEX MODE
+------------
+
+prefix     # of   struct   kmer
+# Collect read counts per asm copies
+# Read only
+# Copy 1 ~ 4
+Copy = 1 ..
+
+Copy = 2 ..
+
+Copy = 3 ..
+
+Copy = 4 ..
+
+Copy >4 ..
+
+# Copy numbers in k-mers found only in asm
+
+# Plot canu_assembly.canu_assembly.spectra-cn.hist
+  Rscript /usr/local/merqury-1.3/plot/plot_spectra_cn.R -f canu_assembly.canu_assembly.spectra-cn.hist -o canu_assembly.canu_assembly.spectra-cn -z canu_assembly.canu_assembly.only.hist
+[1] "x_max: 35"
+[1] "y_max: 9837282.4"
+[1] "## Line graph"
+[1] "## Area under the curve filled"
+[1] "## Stacked"
+
+# QV statistics
+
+# Per seq QV statistics
+
+# k-mer completeness (recoveray rate) with solid k-mers for canu_assembly with > 4 counts
+
+# Generate canu_assembly_only.wig
+canu_assembly_only.wig generated.
+
+No asm2_fa given. Done.
+# canu_assembly only
+# Write output
+# Get asm only for spectra-asm
+#	Plot canu_assembly.spectra-asm.hist
+  Rscript /usr/local/merqury-1.3/plot/plot_spectra_cn.R -f canu_assembly.spectra-asm.hist -o canu_assembly.spectra-asm -z canu_assembly.dist_only.hist
+[1] "x_max: 35"
+[1] "y_max: 9861637.5"
+[1] "## Line graph"
+[1] "## Area under the curve filled"
+[1] "## Stacked"
+
+# Clean up
+Done!
+     3  S    64 MB   192 MB   242 MB
+    15    32 kP   101 MB  1896  M     2  S   128 MB   256 MB   357 MB
+    16    64 kP   202 MB   948  M     1  S   256 MB   256 MB   458 MB
+    17   128 kP   405 MB   474  M     1  S   512 MB   512 MB   917 MB
+    18   256 kP   810 MB   237  M     1  S  1024 MB  1024 MB  1834 MB
+    19   512 kP  1620 MB   119  M     1  S  2048 MB  2048 MB  3668 MB
+    20  1024 kP  3240 MB    60  M     1  S  4096 MB  4096 MB  7336 MB
+
+
+FINAL CONFIGURATION
+-------------------
+
+Estimated to require 419 MB memory out of 20 GB allowed.
+Estimated to require 2 batches.
+
+Configured complex mode for 0.410 GB memory per batch, and up to 2 batches.
+
+Start counting with THREADED method.
+Used 0.267 GB / 19.969 GB to store      2097132 kmers; need 0.003 GB to sort        46336 kmers
+Used 0.371 GB / 19.969 GB to store     33553998 kmers; need 0.028 GB to sort       465115 kmers
+Used 0.475 GB / 19.969 GB to store     65010560 kmers; need 0.053 GB to sort       894783 kmers
+Used 0.580 GB / 19.969 GB to store     96465868 kmers; need 0.077 GB to sort      1292635 kmers
+
+Input complete.  Writing results to 'canu_assembly.meryl', using 4 threads.
+finishIteration()--
+
+Finished counting.
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 4 threads.
+  opDifference
+    kmer_db.meryl
+    canu_assembly.meryl
+    output to read.k19.canu_assembly.0.meryl
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 4 threads.
+  opIntersect
+    kmer_db.meryl
+    opEqualTo
+      threshold=1
+      canu_assembly.meryl
+    output to read.k19.canu_assembly.1.meryl
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 4 threads.
+  opIntersect
+    kmer_db.meryl
+    opEqualTo
+      threshold=2
+      canu_assembly.meryl
+    output to read.k19.canu_assembly.2.meryl
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 4 threads.
+  opIntersect
+    kmer_db.meryl
+    opEqualTo
+      threshold=3
+      canu_assembly.meryl
+    output to read.k19.canu_assembly.3.meryl
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 4 threads.
+  opIntersect
+    kmer_db.meryl
+    opEqualTo
+      threshold=4
+      canu_assembly.meryl
+    output to read.k19.canu_assembly.4.meryl
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 4 threads.
+  opIntersect
+    kmer_db.meryl
+    opGreaterThan
+      threshold=4
+      canu_assembly.meryl
+    output to read.k19.canu_assembly.gt4.meryl
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 4 threads.
+  opDifference
+    canu_assembly.meryl
+    kmer_db.meryl
+    output to canu_assembly.0.meryl
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+Found 1 command tree.
+During startup - Warning messages:
+1: Setting LC_CTYPE failed, using "C" 
+2: Setting LC_COLLATE failed, using "C" 
+3: Setting LC_TIME failed, using "C" 
+4: Setting LC_MESSAGES failed, using "C" 
+5: Setting LC_MONETARY failed, using "C" 
+6: Setting LC_PAPER failed, using "C" 
+7: Setting LC_MEASUREMENT failed, using "C" 
+Loading required package: argparse
+Loading required package: ggplot2
+Loading required package: scales
+
+Found 1 command tree.
+
+Found 1 command tree.
+--
+-- Estimating memory usage for 'canu_assembly.0.meryl/'.
+--
+
+ p       prefixes             bits gigabytes (allowed: 20 GB)
+-- -------------- ---------------- ---------
+10           1024         29699132     0.003
+11           2048         28963760     0.003
+12           4096         28293924     0.003
+13           8192         27755160     0.003
+14          16384         27478540     0.003 (smallest)
+15          32768         27726208     0.003
+16          65536         29022452     0.003
+17         131072         32415848     0.004 (faster)
+18         262144         40003548     0.005
+19         524288         55979856     0.007
+20        1048576         88733380     0.010
+21        2097152        155041336     0.018
+-- -------------- ---------------- ---------
+           800908 total kmers
+
+--
+-- Minimal memory needed: 0.003 GB
+-- Optimal memory needed: 0.004 GB  enabled
+-- Memory limit           20.000 GB
+--
+--
+-- Loading kmers from 'canu_assembly.0.meryl/' into lookup table.
+--
+
+For 800908 distinct 19-mers (with 17 bits used for indexing and 21 bits for tags):
+    0.001 GB memory for kmer indices -       131072 elements 64 bits wide)
+    0.002 GB memory for kmer tags    -       800908 elements 21 bits wide)
+    0.001 GB memory for kmer values  -       800908 elements  9 bits wide)
+    0.004 GB memory
+
+Will load 800908 kmers.  Skipping 0 (too low) and 0 (too high) kmers.
+Allocating space for 817036 suffixes of 21 bits each -> 17157756 bits (0.002 GB) in blocks of 32.000 MB
+                     817036 values   of 9 bits each -> 7353324 bits (0.001 GB) in blocks of 32.000 MB
+Loaded 800908 kmers.  Skipped 0 (too low) and 0 (too high) kmers.
+-- Opening input sequences 'canu_assembly.fasta'.
+-- Opening output file '-'.
+Bye!
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 4 threads.
+  opIntersect
+    canu_assembly.meryl
+    kmer_db.gt4.meryl
+    output to canu_assembly.solid.meryl
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+Found 1 command tree.
+--
+-- Estimating memory usage for 'canu_assembly.0.meryl'.
+--
+
+ p       prefixes             bits gigabytes (allowed: 20 GB)
+-- -------------- ---------------- ---------
+10           1024         29699132     0.003
+11           2048         28963760     0.003
+12           4096         28293924     0.003
+13           8192         27755160     0.003
+14          16384         27478540     0.003 (smallest)
+15          32768         27726208     0.003
+16          65536         29022452     0.003
+17         131072         32415848     0.004 (faster)
+18         262144         40003548     0.005
+19         524288         55979856     0.007
+20        1048576         88733380     0.010
+21        2097152        155041336     0.018
+-- -------------- ---------------- ---------
+           800908 total kmers
+
+--
+-- Minimal memory needed: 0.003 GB
+-- Optimal memory needed: 0.004 GB  enabled
+-- Memory limit           20.000 GB
+--
+--
+-- Loading kmers from 'canu_assembly.0.meryl' into lookup table.
+--
+
+For 800908 distinct 19-mers (with 17 bits used for indexing and 21 bits for tags):
+    0.001 GB memory for kmer indices -       131072 elements 64 bits wide)
+    0.002 GB memory for kmer tags    -       800908 elements 21 bits wide)
+    0.001 GB memory for kmer values  -       800908 elements  9 bits wide)
+    0.004 GB memory
+
+Will load 800908 kmers.  Skipping 0 (too low) and 0 (too high) kmers.
+Allocating space for 817036 suffixes of 21 bits each -> 17157756 bits (0.002 GB) in blocks of 32.000 MB
+                     817036 values   of 9 bits each -> 7353324 bits (0.001 GB) in blocks of 32.000 MB
+Loaded 800908 kmers.  Skipped 0 (too low) and 0 (too high) kmers.
+-- Opening input sequences 'canu_assembly.fasta'.
+-- Opening output file '-'.
+Bye!
+--
+-- Estimating memory usage for 'canu_assembly.0.meryl'.
+--
+
+ p       prefixes             bits gigabytes (allowed: 20 GB)
+-- -------------- ---------------- ---------
+10           1024         29699132     0.003
+11           2048         28963760     0.003
+12           4096         28293924     0.003
+13           8192         27755160     0.003
+14          16384         27478540     0.003 (smallest)
+15          32768         27726208     0.003
+16          65536         29022452     0.003
+17         131072         32415848     0.004 (faster)
+18         262144         40003548     0.005
+19         524288         55979856     0.007
+20        1048576         88733380     0.010
+21        2097152        155041336     0.018
+-- -------------- ---------------- ---------
+           800908 total kmers
+
+--
+-- Minimal memory needed: 0.003 GB
+-- Optimal memory needed: 0.004 GB  enabled
+-- Memory limit           20.000 GB
+--
+--
+-- Loading kmers from 'canu_assembly.0.meryl' into lookup table.
+--
+
+For 800908 distinct 19-mers (with 17 bits used for indexing and 21 bits for tags):
+    0.001 GB memory for kmer indices -       131072 elements 64 bits wide)
+    0.002 GB memory for kmer tags    -       800908 elements 21 bits wide)
+    0.001 GB memory for kmer values  -       800908 elements  9 bits wide)
+    0.004 GB memory
+
+Will load 800908 kmers.  Skipping 0 (too low) and 0 (too high) kmers.
+Allocating space for 817036 suffixes of 21 bits each -> 17157756 bits (0.002 GB) in blocks of 32.000 MB
+                     817036 values   of 9 bits each -> 7353324 bits (0.001 GB) in blocks of 32.000 MB
+Loaded 800908 kmers.  Skipped 0 (too low) and 0 (too high) kmers.
+-- Opening input sequences 'canu_assembly.fasta'.
+-- Opening output file '-'.
+Bye!
+
+Found 1 command tree.
+
+PROCESSING TREE #1 using 4 threads.
+  opIntersect
+    kmer_db.meryl
+    canu_assembly.meryl
+    output to read.k19.canu_assembly.meryl
+
+Cleaning up.
+
+Bye.
+
+Found 1 command tree.
+
+Found 1 command tree.
+
+Found 1 command tree.
+During startup - Warning messages:
+1: Setting LC_CTYPE failed, using "C" 
+2: Setting LC_COLLATE failed, using "C" 
+3: Setting LC_TIME failed, using "C" 
+4: Setting LC_MESSAGES failed, using "C" 
+5: Setting LC_MONETARY failed, using "C" 
+6: Setting LC_PAPER failed, using "C" 
+7: Setting LC_MEASUREMENT failed, using "C" 
+Loading required package: argparse
+Loading required package: ggplot2
+Loading required package: scales
