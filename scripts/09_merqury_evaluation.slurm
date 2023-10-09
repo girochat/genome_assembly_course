@@ -20,7 +20,7 @@ ASSEMBLY_DIR=$(realpath $2)
 OUTPUT_DIR=$3
 
 # Store all assemblies in an array
-assemblies=($(ls ${ASSEMBLY_DIR}/*.fasta))
+assemblies=($(ls ${ASSEMBLY_DIR}/*assembly*.fasta))
 filename=$(basename ${assemblies[$SLURM_ARRAY_TASK_ID]} .fasta)
 
 # Create and go to output directory

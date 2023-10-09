@@ -15,12 +15,18 @@
 
 READS_DIR=$1
 kmer_size=$2
-paired_reads=($(ls ${READS_DIR}/.fastq.gz))
+paired_reads=($(ls ${READS_DIR}/*.fastq.gz))
 
 # Import Canu module to use meryl command
 module add UHTS/Assembler/canu/2.1.1
 
 # Build kmer database with Meryl
-meryl k=${kmer_size} count threads=4 memory=20 compress ${paired_reads[@]} output ${READS_DIR}/kmer_db.meryl
+meryl count k=${kmer_size} threads=4 memory=20 ${paired_reads[0]} output ${READS_DIR}/kmer_db_1.meryl
+meryl count k=${kmer_size} threads=4 memory=20 ${paired_reads[1]} output ${READS_DIR}/kmer_db_2.meryl
 
+meryl union-sum ${READS_DIR}/kmer_db_1.meryl ${READS_DIR}/kmer_db_2.meryl output ${READS_DIR}/kmer_db.meryl
 
+rm -R ${READS_DIR}/kmer_db_1.meryl ${READS_DIR}/kmer_db_2.meryl
+
+# First command that did not work
+#meryl k=${kmer_size} count threads=4 memory=20 compress ${paired_reads[@]} output ${READS_DIR}/kmer_db.meryl

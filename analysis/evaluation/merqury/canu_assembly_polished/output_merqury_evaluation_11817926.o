@@ -1,0 +1,10 @@
+read: kmer_db.meryl
+
+No haplotype dbs provided.
+Running Merqury in non-trio mode...
+
+asm1: canu_assembly_polished.fasta
+out : canu_assembly_polished
+
+
+Get spectra-cn plots and QV stats

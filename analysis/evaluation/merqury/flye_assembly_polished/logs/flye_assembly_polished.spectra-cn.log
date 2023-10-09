@@ -8,9 +8,9 @@ PROCESSING TREE #1 using 4 threads.
 
 Found 1 command tree.
 Processing file kmer_db.hist
-Start sampling here: 4, 2104528.0
-Next max here: 14, 1.3848107E7
-Stop sampling here: 25, 1778803.0
+Start sampling here: 11, 367265.0
+Next max here: 29, 5699140.0
+Stop sampling here: 49, 340958.0
 Running time : 0 h 0 m 0 sec
 
 
@@ -18,9 +18,9 @@ Found 1 command tree.
 
 PROCESSING TREE #1 using 4 threads.
   opGreaterThan
-    threshold=4
+    threshold=11
     kmer_db.meryl
-    output to kmer_db.gt4.meryl
+    output to kmer_db.gt11.meryl
 
 Cleaning up.
 
@@ -49,7 +49,7 @@ SIMPLE MODE
 COMPLEX MODE
 ------------
 
-prefix     # of   struct   kmer
+prefix     # of   struct   kmers/   
 # Collect read counts per asm copies
 # Read only
 # Copy 1 ~ 4
@@ -67,8 +67,8 @@ Copy >4 ..
 
 # Plot flye_assembly_polished.flye_assembly_polished.spectra-cn.hist
   Rscript /usr/local/merqury-1.3/plot/plot_spectra_cn.R -f flye_assembly_polished.flye_assembly_polished.spectra-cn.hist -o flye_assembly_polished.flye_assembly_polished.spectra-cn -z flye_assembly_polished.flye_assembly_polished.only.hist
-[1] "x_max: 35"
-[1] "y_max: 9918036.7"
+[1] "x_max: 72.5"
+[1] "y_max: 6224478.7"
 [1] "## Line graph"
 [1] "## Area under the curve filled"
 [1] "## Stacked"
@@ -77,7 +77,7 @@ Copy >4 ..
 
 # Per seq QV statistics
 
-# k-mer completeness (recoveray rate) with solid k-mers for flye_assembly_polished with > 4 counts
+# k-mer completeness (recoveray rate) with solid k-mers for flye_assembly_polished with > 11 counts
 
 # Generate flye_assembly_polished_only.wig
 flye_assembly_polished_only.wig generated.
@@ -88,15 +88,15 @@ No asm2_fa given. Done.
 # Get asm only for spectra-asm
 #	Plot flye_assembly_polished.spectra-asm.hist
   Rscript /usr/local/merqury-1.3/plot/plot_spectra_cn.R -f flye_assembly_polished.spectra-asm.hist -o flye_assembly_polished.spectra-asm -z flye_assembly_polished.dist_only.hist
-[1] "x_max: 35"
-[1] "y_max: 9938000.6"
+[1] "x_max: 72.5"
+[1] "y_max: 6230687.1"
 [1] "## Line graph"
 [1] "## Area under the curve filled"
 [1] "## Stacked"
 
 # Clean up
 Done!
- 1  S   256 MB   256 MB   458 MB
+6 MB   256 MB   458 MB
     17   128 kP   405 MB   464  M     1  S   512 MB   512 MB   917 MB
     18   256 kP   810 MB   232  M     1  S  1024 MB  1024 MB  1834 MB
     19   512 kP  1620 MB   116  M     1  S  2048 MB  2048 MB  3668 MB
@@ -112,10 +112,10 @@ Estimated to require 2 batches.
 Configured complex mode for 0.402 GB memory per batch, and up to 2 batches.
 
 Start counting with THREADED method.
-Used 0.267 GB / 19.969 GB to store      2097113 kmers; need 0.002 GB to sort        37963 kmers
-Used 0.371 GB / 19.969 GB to store     33552630 kmers; need 0.029 GB to sort       483148 kmers
-Used 0.475 GB / 19.969 GB to store     65008546 kmers; need 0.052 GB to sort       869478 kmers
-Used 0.580 GB / 19.969 GB to store     96464653 kmers; need 0.078 GB to sort      1312872 kmers
+Used 0.268 GB / 19.969 GB to store      2097113 kmers; need 0.003 GB to sort        51198 kmers
+Used 0.371 GB / 19.969 GB to store     33552630 kmers; need 0.028 GB to sort       468249 kmers
+Used 0.475 GB / 19.969 GB to store     65008546 kmers; need 0.053 GB to sort       887762 kmers
+Used 0.580 GB / 19.969 GB to store     96464653 kmers; need 0.077 GB to sort      1294274 kmers
 
 Input complete.  Writing results to 'flye_assembly_polished.meryl', using 4 threads.
 finishIteration()--
@@ -256,20 +256,20 @@ Found 1 command tree.
 
  p       prefixes             bits gigabytes (allowed: 20 GB)
 -- -------------- ---------------- ---------
- 7            128          4481603     0.001
- 8            256          4368892     0.001
- 9            512          4264373     0.000
-10           1024          4176238     0.000
-11           2048          4120871     0.000 (smallest)
-12           4096          4131040     0.000
-13           8192          4272281     0.000
-14          16384          4675666     0.001 (faster)
-15          32768          5603339     0.001
-16          65536          7579588     0.001
-17         131072         11652989     0.001
-18         262144         19920694     0.002
+ 7            128          4367717     0.001
+ 8            256          4258084     0.000
+ 9            512          4156643     0.000
+10           1024          4071586     0.000
+11           2048          4019297     0.000 (smallest)
+12           4096          4032544     0.000
+13           8192          4176863     0.000
+14          16384          4583326     0.001 (faster)
+15          32768          5514077     0.001
+16          65536          7493404     0.001
+17         131072         11569883     0.001
+18         262144         19840666     0.002
 -- -------------- ---------------- ---------
-           120903 total kmers
+           117825 total kmers
 
 --
 -- Minimal memory needed: 0.000 GB
@@ -280,16 +280,16 @@ Found 1 command tree.
 -- Loading kmers from 'flye_assembly_polished.0.meryl/' into lookup table.
 --
 
-For 120903 distinct 19-mers (with 14 bits used for indexing and 24 bits for tags):
+For 117825 distinct 19-mers (with 14 bits used for indexing and 24 bits for tags):
     0.000 GB memory for kmer indices -        16384 elements 64 bits wide)
-    0.000 GB memory for kmer tags    -       120903 elements 24 bits wide)
-    0.000 GB memory for kmer values  -       120903 elements  6 bits wide)
+    0.000 GB memory for kmer tags    -       117825 elements 24 bits wide)
+    0.000 GB memory for kmer values  -       117825 elements  6 bits wide)
     0.001 GB memory
 
-Will load 120903 kmers.  Skipping 0 (too low) and 0 (too high) kmers.
-Allocating space for 137031 suffixes of 24 bits each -> 3288744 bits (0.000 GB) in blocks of 32.000 MB
-                     137031 values   of 6 bits each -> 822186 bits (0.000 GB) in blocks of 32.000 MB
-Loaded 120903 kmers.  Skipped 0 (too low) and 0 (too high) kmers.
+Will load 117825 kmers.  Skipping 0 (too low) and 0 (too high) kmers.
+Allocating space for 133953 suffixes of 24 bits each -> 3214872 bits (0.000 GB) in blocks of 32.000 MB
+                     133953 values   of 6 bits each -> 803718 bits (0.000 GB) in blocks of 32.000 MB
+Loaded 117825 kmers.  Skipped 0 (too low) and 0 (too high) kmers.
 -- Opening input sequences 'flye_assembly_polished.fasta'.
 -- Opening output file '-'.
 Bye!
@@ -299,7 +299,7 @@ Found 1 command tree.
 PROCESSING TREE #1 using 4 threads.
   opIntersect
     flye_assembly_polished.meryl
-    kmer_db.gt4.meryl
+    kmer_db.gt11.meryl
     output to flye_assembly_polished.solid.meryl
 
 Cleaning up.
@@ -315,20 +315,20 @@ Found 1 command tree.
 
  p       prefixes             bits gigabytes (allowed: 20 GB)
 -- -------------- ---------------- ---------
- 7            128          4481603     0.001
- 8            256          4368892     0.001
- 9            512          4264373     0.000
-10           1024          4176238     0.000
-11           2048          4120871     0.000 (smallest)
-12           4096          4131040     0.000
-13           8192          4272281     0.000
-14          16384          4675666     0.001 (faster)
-15          32768          5603339     0.001
-16          65536          7579588     0.001
-17         131072         11652989     0.001
-18         262144         19920694     0.002
+ 7            128          4367717     0.001
+ 8            256          4258084     0.000
+ 9            512          4156643     0.000
+10           1024          4071586     0.000
+11           2048          4019297     0.000 (smallest)
+12           4096          4032544     0.000
+13           8192          4176863     0.000
+14          16384          4583326     0.001 (faster)
+15          32768          5514077     0.001
+16          65536          7493404     0.001
+17         131072         11569883     0.001
+18         262144         19840666     0.002
 -- -------------- ---------------- ---------
-           120903 total kmers
+           117825 total kmers
 
 --
 -- Minimal memory needed: 0.000 GB
@@ -339,16 +339,16 @@ Found 1 command tree.
 -- Loading kmers from 'flye_assembly_polished.0.meryl' into lookup table.
 --
 
-For 120903 distinct 19-mers (with 14 bits used for indexing and 24 bits for tags):
+For 117825 distinct 19-mers (with 14 bits used for indexing and 24 bits for tags):
     0.000 GB memory for kmer indices -        16384 elements 64 bits wide)
-    0.000 GB memory for kmer tags    -       120903 elements 24 bits wide)
-    0.000 GB memory for kmer values  -       120903 elements  6 bits wide)
+    0.000 GB memory for kmer tags    -       117825 elements 24 bits wide)
+    0.000 GB memory for kmer values  -       117825 elements  6 bits wide)
     0.001 GB memory
 
-Will load 120903 kmers.  Skipping 0 (too low) and 0 (too high) kmers.
-Allocating space for 137031 suffixes of 24 bits each -> 3288744 bits (0.000 GB) in blocks of 32.000 MB
-                     137031 values   of 6 bits each -> 822186 bits (0.000 GB) in blocks of 32.000 MB
-Loaded 120903 kmers.  Skipped 0 (too low) and 0 (too high) kmers.
+Will load 117825 kmers.  Skipping 0 (too low) and 0 (too high) kmers.
+Allocating space for 133953 suffixes of 24 bits each -> 3214872 bits (0.000 GB) in blocks of 32.000 MB
+                     133953 values   of 6 bits each -> 803718 bits (0.000 GB) in blocks of 32.000 MB
+Loaded 117825 kmers.  Skipped 0 (too low) and 0 (too high) kmers.
 -- Opening input sequences 'flye_assembly_polished.fasta'.
 -- Opening output file '-'.
 Bye!
@@ -358,20 +358,20 @@ Bye!
 
  p       prefixes             bits gigabytes (allowed: 20 GB)
 -- -------------- ---------------- ---------
- 7            128          4481603     0.001
- 8            256          4368892     0.001
- 9            512          4264373     0.000
-10           1024          4176238     0.000
-11           2048          4120871     0.000 (smallest)
-12           4096          4131040     0.000
-13           8192          4272281     0.000
-14          16384          4675666     0.001 (faster)
-15          32768          5603339     0.001
-16          65536          7579588     0.001
-17         131072         11652989     0.001
-18         262144         19920694     0.002
+ 7            128          4367717     0.001
+ 8            256          4258084     0.000
+ 9            512          4156643     0.000
+10           1024          4071586     0.000
+11           2048          4019297     0.000 (smallest)
+12           4096          4032544     0.000
+13           8192          4176863     0.000
+14          16384          4583326     0.001 (faster)
+15          32768          5514077     0.001
+16          65536          7493404     0.001
+17         131072         11569883     0.001
+18         262144         19840666     0.002
 -- -------------- ---------------- ---------
-           120903 total kmers
+           117825 total kmers
 
 --
 -- Minimal memory needed: 0.000 GB
@@ -382,16 +382,16 @@ Bye!
 -- Loading kmers from 'flye_assembly_polished.0.meryl' into lookup table.
 --
 
-For 120903 distinct 19-mers (with 14 bits used for indexing and 24 bits for tags):
+For 117825 distinct 19-mers (with 14 bits used for indexing and 24 bits for tags):
     0.000 GB memory for kmer indices -        16384 elements 64 bits wide)
-    0.000 GB memory for kmer tags    -       120903 elements 24 bits wide)
-    0.000 GB memory for kmer values  -       120903 elements  6 bits wide)
+    0.000 GB memory for kmer tags    -       117825 elements 24 bits wide)
+    0.000 GB memory for kmer values  -       117825 elements  6 bits wide)
     0.001 GB memory
 
-Will load 120903 kmers.  Skipping 0 (too low) and 0 (too high) kmers.
-Allocating space for 137031 suffixes of 24 bits each -> 3288744 bits (0.000 GB) in blocks of 32.000 MB
-                     137031 values   of 6 bits each -> 822186 bits (0.000 GB) in blocks of 32.000 MB
-Loaded 120903 kmers.  Skipped 0 (too low) and 0 (too high) kmers.
+Will load 117825 kmers.  Skipping 0 (too low) and 0 (too high) kmers.
+Allocating space for 133953 suffixes of 24 bits each -> 3214872 bits (0.000 GB) in blocks of 32.000 MB
+                     133953 values   of 6 bits each -> 803718 bits (0.000 GB) in blocks of 32.000 MB
+Loaded 117825 kmers.  Skipped 0 (too low) and 0 (too high) kmers.
 -- Opening input sequences 'flye_assembly_polished.fasta'.
 -- Opening output file '-'.
 Bye!
