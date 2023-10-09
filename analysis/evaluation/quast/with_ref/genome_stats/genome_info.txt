@@ -1,0 +1,26 @@
+Genomic features of type "ANY" loaded: 590264
+reference chromosomes:
+	1 (total length: 30427671 bp, total length without N's: 30263312 bp, maximal covered length: 29589665 bp)
+	2 (total length: 19698289 bp, total length without N's: 19695728 bp, maximal covered length: 18893170 bp)
+	3 (total length: 23459830 bp, total length without N's: 23453853 bp, maximal covered length: 22124124 bp)
+	4 (total length: 18585056 bp, total length without N's: 18582024 bp, maximal covered length: 17864548 bp)
+	5 (total length: 26975502 bp, total length without N's: 26965224 bp, maximal covered length: 25956771 bp)
+	Mt (total length: 366924 bp, total length without N's: 366924 bp, maximal covered length: 349270 bp)
+	Pt (total length: 154478 bp, total length without N's: 154478 bp, maximal covered length: 154478 bp)
+
+total genome size: 119667750
+
+gap min size: 50
+partial gene/operon min size: 100
+
+
+
+assembly                 | genome    | duplication | gaps      | genes     | partial   | operons   | partial   |
+                         | fraction  | ratio       | number    |           | genes     |           | operons   |
+========================================================================================================================
+UpperBound               | 96.192    | 1.004       | 0         | 0         | 0         | -         | -         |
+canu_assembly            | 88.649    | 1.032       | 0         | 0         | 0         | -         | -         |
+canu_assembly_polished   | 88.680    | 1.032       | 0         | 0         | 0         | -         | -         |
+flye_assembly            | 88.536    | 1.006       | 0         | 0         | 0         | -         | -         |
+flye_assembly_polished   | 88.561    | 1.006       | 0         | 0         | 0         | -         | -         |
+trinity_assembly         | 2.507     | 2.113       | 0         | 0         | 0         | -         | -         |
