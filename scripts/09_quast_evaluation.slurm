@@ -14,7 +14,7 @@
 #SBATCH --partition=pall
 
 # Store all assemblies in an array
-assemblies=$(ls $1/*.fasta)
+assemblies=$(ls $1/*assembly*.fasta)
 
 # Get output directory and boolean variable indicating with/without reference analysis
 OUTPUT_DIR=$2
@@ -46,7 +46,7 @@ else
 	apptainer exec --bind $READS_DIR:/mnt/reads,$REF_DIR:/mnt/reference /data/courses/assembly-annotation-course/containers/quast_5.1.0rc1.sif \
 	python3 $PWD/quast-5.2.0/quast.py \
 	-r $PWD/data/reference/ref_genome.fa --features /mnt/reference/TAIR10_GFF3_genes.gff \
-	-o $PWD/${OUTPUT_DIR} --threads 20 --large --no-sv \
+	-o $PWD/${OUTPUT_DIR} --threads 20 --large --no-sv --upper-bound-assembly \
 	--pe1 $PWD/data/reads/genome/Illumina/ERR3624575_1_modif.fastq.gz --pe2 $PWD/data/reads/genome/Illumina/ERR3624575_2_modif.fastq.gz\
 	--pacbio /mnt/reads/pacbio/ERR3415830.fastq.gz --pacbio /mnt/reads/pacbio/ERR3415831.fastq.gz \
 	${assemblies[@]}
