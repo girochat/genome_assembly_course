@@ -1,4 +1,4 @@
-/data/users/grochat/genome_assembly_course/quast-5.2.0/quast.py -o /data/users/grochat/genome_assembly_course/analysis/evaluation/quast --threads 4 --large --est-ref-size 135000000 --pe1 /mnt/reads/Illumina/ERR3624575_1.fastq.gz --pe2 /mnt/reads/Illumina/ERR3624575_2.fastq.gz --pacbio /mnt/reads/pacbio/ERR3415830.fastq.gz --pacbio /mnt/reads/pacbio/ERR3415831.fastq.gz /data/users/grochat/genome_assembly_course/data/assembly/canu_assembly.fasta /data/users/grochat/genome_assembly_course/data/assembly/canu_assembly_polished.fasta /data/users/grochat/genome_assembly_course/data/assembly/flye_assembly.fasta /data/users/grochat/genome_assembly_course/data/assembly/flye_assembly_polished.fasta /data/users/grochat/genome_assembly_course/data/assembly/trinity_assembly.fasta
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast.py -o /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3 --threads 20 --large --est-ref-size 135000000 --pe1 /data/users/grochat/genome_assembly_course/data/reads/genome/Illumina/ERR3624575_1_modif.fastq.gz --pe2 /data/users/grochat/genome_assembly_course/data/reads/genome/Illumina/ERR3624575_2_modif.fastq.gz --pacbio /mnt/reads/pacbio/ERR3415830.fastq.gz --pacbio /mnt/reads/pacbio/ERR3415831.fastq.gz /data/users/grochat/genome_assembly_course/data/assembly/canu_assembly.fasta /data/users/grochat/genome_assembly_course/data/assembly/canu_assembly_polished.fasta /data/users/grochat/genome_assembly_course/data/assembly/flye_assembly.fasta /data/users/grochat/genome_assembly_course/data/assembly/flye_assembly_polished.fasta
 
 Version: 5.2.0, 3d87c606
 
@@ -7,13 +7,13 @@ System information:
   Python version: 3.8.10
   CPUs number: 24
 
-Started: 2023-10-05 23:14:05
+Started: 2023-10-10 08:47:01
 
-Logging to /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/quast.log
+Logging to /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/quast.log
 
 CWD: /data/users/grochat/genome_assembly_course
 Main parameters: 
-  MODE: large, threads: 4, eukaryotic: true, min contig length: 3000, min alignment length: 500, \
+  MODE: large, threads: 20, eukaryotic: true, min contig length: 3000, min alignment length: 500, \
   min alignment IDY: 95.0, ambiguity: one, min local misassembly length: 200, min extensive misassembly length: 7000
 
 Contigs:
@@ -22,20 +22,271 @@ Contigs:
   2  /data/users/grochat/genome_assembly_course/data/assembly/canu_assembly_polished.fasta ==> canu_assembly_polished
   3  /data/users/grochat/genome_assembly_course/data/assembly/flye_assembly.fasta ==> flye_assembly
   4  /data/users/grochat/genome_assembly_course/data/assembly/flye_assembly_polished.fasta ==> flye_assembly_polished
-  5  /data/users/grochat/genome_assembly_course/data/assembly/trinity_assembly.fasta ==> trinity_assembly
 
-2023-10-05 23:14:16
+2023-10-10 08:48:07
 Running Reads analyzer...
-Compiling BWA (details are in /data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/bwa/make.log and make.err)
-make -C quast-5.2.0/quast_libs/bwa >> quast-5.2.0/quast_libs/bwa/make.log 2>> quast-5.2.0/quast_libs/bwa/make.err
-Compiling BEDtools (details are in /data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/bedtools/make.log and make.err)
-make -C quast-5.2.0/quast_libs/bedtools >> quast-5.2.0/quast_libs/bedtools/make.log \
-2>> quast-5.2.0/quast_libs/bedtools/make.err
-The tool returned non-zero. See quast-5.2.0/quast_libs/bedtools/make.err for stderr.
-WARNING: Failed to compile BEDtools (/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/bedtools)! Try to compile it manually. You can restart Quast with the --debug flag to see the compilation command.
-Failed reads analysis
+  Logging to files /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.log and /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err...
+  3  Pre-processing reads...
+  3  Running BWA...
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/bwa/bwa index -p \
+/data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/quast_corrected_input/flye_assembly.fasta \
+/data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/quast_corrected_input/flye_assembly.fasta \
+>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err \
+2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+  2  Pre-processing reads...
+  2  Running BWA...
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/bwa/bwa index -p \
+/data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/quast_corrected_input/canu_assembly_polished.fasta \
+/data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/quast_corrected_input/canu_assembly_polished.fasta \
+>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err \
+2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+  4  Pre-processing reads...
+  4  Running BWA...
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/bwa/bwa index -p \
+/data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/quast_corrected_input/flye_assembly_polished.fasta \
+/data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/quast_corrected_input/flye_assembly_polished.fasta \
+>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err \
+2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+  1  Pre-processing reads...
+  1  Running BWA...
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/bwa/bwa index -p \
+/data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/quast_corrected_input/canu_assembly.fasta \
+/data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/quast_corrected_input/canu_assembly.fasta \
+>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err \
+2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/bwa/bwa mem -t 4 \
+/data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/quast_corrected_input/flye_assembly.fasta \
+/data/users/grochat/genome_assembly_course/data/reads/genome/Illumina/ERR3624575_1_modif.fastq.gz \
+/data/users/grochat/genome_assembly_course/data/reads/genome/Illumina/ERR3624575_2_modif.fastq.gz \
+> flye_assembly.pe1.sam 2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/bwa/bwa mem -t 4 \
+/data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/quast_corrected_input/canu_assembly.fasta \
+/data/users/grochat/genome_assembly_course/data/reads/genome/Illumina/ERR3624575_1_modif.fastq.gz \
+/data/users/grochat/genome_assembly_course/data/reads/genome/Illumina/ERR3624575_2_modif.fastq.gz \
+> canu_assembly.pe1.sam 2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/bwa/bwa mem -t 4 \
+/data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/quast_corrected_input/canu_assembly_polished.fasta \
+/data/users/grochat/genome_assembly_course/data/reads/genome/Illumina/ERR3624575_1_modif.fastq.gz \
+/data/users/grochat/genome_assembly_course/data/reads/genome/Illumina/ERR3624575_2_modif.fastq.gz \
+> canu_assembly_polished.pe1.sam 2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/bwa/bwa mem -t 4 \
+/data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/quast_corrected_input/flye_assembly_polished.fasta \
+/data/users/grochat/genome_assembly_course/data/reads/genome/Illumina/ERR3624575_1_modif.fastq.gz \
+/data/users/grochat/genome_assembly_course/data/reads/genome/Illumina/ERR3624575_2_modif.fastq.gz \
+> flye_assembly_polished.pe1.sam 2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+view -t 4 -h -S -f bam flye_assembly_polished.pe1.sam > flye_assembly_polished.pe1.bam \
+2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+view -t 4 -h -S -f bam flye_assembly.pe1.sam > flye_assembly.pe1.bam 2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+markdup -r -t 4 --tmpdir /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats \
+flye_assembly_polished.pe1.bam flye_assembly_polished.pe1.dedup.bam 2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+markdup -r -t 4 --tmpdir /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats \
+flye_assembly.pe1.bam flye_assembly.pe1.dedup.bam 2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/minimap2/minimap2 \
+-t 4 -ax map-pb /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/quast_corrected_input/flye_assembly_polished.fasta \
+/mnt/reads/pacbio/ERR3415830.fastq.gz > flye_assembly_polished.pacbio1.sam 2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+view -t 4 -h -S -f bam canu_assembly_polished.pe1.sam > canu_assembly_polished.pe1.bam \
+2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/minimap2/minimap2 \
+-t 4 -ax map-pb /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/quast_corrected_input/flye_assembly.fasta \
+/mnt/reads/pacbio/ERR3415830.fastq.gz > flye_assembly.pacbio1.sam 2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+view -t 4 -h -S -f bam flye_assembly_polished.pacbio1.sam > flye_assembly_polished.pacbio1.bam \
+2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/minimap2/minimap2 \
+-t 4 -ax map-pb /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/quast_corrected_input/flye_assembly_polished.fasta \
+/mnt/reads/pacbio/ERR3415831.fastq.gz > flye_assembly_polished.pacbio2.sam 2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+markdup -r -t 4 --tmpdir /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats \
+canu_assembly_polished.pe1.bam canu_assembly_polished.pe1.dedup.bam 2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+view -t 4 -h -S -f bam flye_assembly.pacbio1.sam > flye_assembly.pacbio1.bam 2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/minimap2/minimap2 \
+-t 4 -ax map-pb /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/quast_corrected_input/flye_assembly.fasta \
+/mnt/reads/pacbio/ERR3415831.fastq.gz > flye_assembly.pacbio2.sam 2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+view -t 4 -h -S -f bam canu_assembly.pe1.sam > canu_assembly.pe1.bam 2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+view -t 4 -h -S -f bam flye_assembly_polished.pacbio2.sam > flye_assembly_polished.pacbio2.bam \
+2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+sort -t 20 --tmpdir . -m 62GB -o flye_assembly_polished.pe.sorted.bam flye_assembly_polished.pe.bam \
+2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/minimap2/minimap2 \
+-t 4 -ax map-pb /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/quast_corrected_input/canu_assembly_polished.fasta \
+/mnt/reads/pacbio/ERR3415830.fastq.gz > canu_assembly_polished.pacbio1.sam 2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+view -t 4 -h -S -f bam flye_assembly.pacbio2.sam > flye_assembly.pacbio2.bam 2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+markdup -r -t 4 --tmpdir /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats \
+canu_assembly.pe1.bam canu_assembly.pe1.dedup.bam 2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+sort -t 20 --tmpdir . -m 62GB -o flye_assembly.pe.sorted.bam flye_assembly.pe.bam \
+2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+sort -t 20 --tmpdir . -m 62GB -o flye_assembly_polished.pacbio1.sorted.bam flye_assembly_polished.pacbio1.bam \
+2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+sort -t 20 --tmpdir . -m 62GB -o flye_assembly_polished.pacbio2.sorted.bam flye_assembly_polished.pacbio2.bam \
+2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+merge -t 4 flye_assembly_polished.bam flye_assembly_polished.pe.sorted.bam flye_assembly_polished.pacbio1.sorted.bam \
+flye_assembly_polished.pacbio2.sorted.bam 2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+sort -t 20 --tmpdir . -m 62GB -o flye_assembly.pacbio1.sorted.bam flye_assembly.pacbio1.bam \
+2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+sort -t 20 --tmpdir . -m 62GB -o flye_assembly.pacbio2.sorted.bam flye_assembly.pacbio2.bam \
+2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+merge -t 4 flye_assembly.bam flye_assembly.pe.sorted.bam flye_assembly.pacbio1.sorted.bam \
+flye_assembly.pacbio2.sorted.bam 2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+view -t 4 -h -S -f bam canu_assembly_polished.pacbio1.sam > canu_assembly_polished.pacbio1.bam \
+2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+view -t 4 -h flye_assembly_polished.bam > flye_assembly_polished.sam 2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/minimap2/minimap2 \
+-t 4 -ax map-pb /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/quast_corrected_input/canu_assembly_polished.fasta \
+/mnt/reads/pacbio/ERR3415831.fastq.gz > canu_assembly_polished.pacbio2.sam 2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+view -t 4 -h flye_assembly.bam > flye_assembly.sam 2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/minimap2/minimap2 \
+-t 4 -ax map-pb /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/quast_corrected_input/canu_assembly.fasta \
+/mnt/reads/pacbio/ERR3415830.fastq.gz > canu_assembly.pacbio1.sam 2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+  4  Done.
+quast-5.2.0/quast_libs/sambamba/sambamba_linux view -H -S analysis/evaluation/quast/without_ref3/reads_stats/temp_output/flye_assembly_polished.sam \
+> analysis/evaluation/quast/without_ref3/reads_stats/flye_assembly_polished.sam.header \
+2>> analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+  4  Sorting SAM-file...
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+view -t 4 -h -S -f bam canu_assembly_polished.pacbio2.sam > canu_assembly_polished.pacbio2.bam \
+2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+  3  Done.
+quast-5.2.0/quast_libs/sambamba/sambamba_linux view -H -S analysis/evaluation/quast/without_ref3/reads_stats/temp_output/flye_assembly.sam \
+> analysis/evaluation/quast/without_ref3/reads_stats/flye_assembly.sam.header 2>> \
+analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+  3  Sorting SAM-file...
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+sort -t 20 --tmpdir . -m 62GB -o canu_assembly_polished.pe.sorted.bam canu_assembly_polished.pe.bam \
+2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+view -t 4 -h -S -f bam canu_assembly.pacbio1.sam > canu_assembly.pacbio1.bam 2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+sort -t 20 --tmpdir . -m 62GB -o canu_assembly_polished.pacbio1.sorted.bam canu_assembly_polished.pacbio1.bam \
+2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/minimap2/minimap2 \
+-t 4 -ax map-pb /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/quast_corrected_input/canu_assembly.fasta \
+/mnt/reads/pacbio/ERR3415831.fastq.gz > canu_assembly.pacbio2.sam 2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+sort -t 20 --tmpdir . -m 62GB -o canu_assembly_polished.pacbio2.sorted.bam canu_assembly_polished.pacbio2.bam \
+2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+merge -t 4 canu_assembly_polished.bam canu_assembly_polished.pe.sorted.bam canu_assembly_polished.pacbio1.sorted.bam \
+canu_assembly_polished.pacbio2.sorted.bam 2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+quast-5.2.0/quast_libs/sambamba/sambamba_linux view -t 4 -h -S -f bam analysis/evaluation/quast/without_ref3/reads_stats/temp_output/flye_assembly_polished.all.correct.sam \
+> analysis/evaluation/quast/without_ref3/reads_stats/temp_output/flye_assembly_polished.bam \
+2>> analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+view -t 4 -h -S -f bam canu_assembly.pacbio2.sam > canu_assembly.pacbio2.bam 2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+quast-5.2.0/quast_libs/sambamba/sambamba_linux view -t 4 -h -S -f bam analysis/evaluation/quast/without_ref3/reads_stats/temp_output/flye_assembly.all.correct.sam \
+> analysis/evaluation/quast/without_ref3/reads_stats/temp_output/flye_assembly.bam \
+2>> analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+view -t 4 -h canu_assembly_polished.bam > canu_assembly_polished.sam 2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+sort -t 20 --tmpdir . -m 62GB -o canu_assembly.pe.sorted.bam canu_assembly.pe.bam \
+2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+sort -t 20 --tmpdir . -m 62GB -o canu_assembly.pacbio1.sorted.bam canu_assembly.pacbio1.bam \
+2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+sort -t 20 --tmpdir . -m 62GB -o canu_assembly.pacbio2.sorted.bam canu_assembly.pacbio2.bam \
+2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+  2  Done.
+quast-5.2.0/quast_libs/sambamba/sambamba_linux view -H -S analysis/evaluation/quast/without_ref3/reads_stats/temp_output/canu_assembly_polished.sam \
+> analysis/evaluation/quast/without_ref3/reads_stats/canu_assembly_polished.sam.header \
+2>> analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+  2  Sorting SAM-file...
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+merge -t 4 canu_assembly.bam canu_assembly.pe.sorted.bam canu_assembly.pacbio1.sorted.bam \
+canu_assembly.pacbio2.sorted.bam 2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+quast-5.2.0/quast_libs/sambamba/sambamba_linux flagstat -t 4 analysis/evaluation/quast/without_ref3/reads_stats/temp_output/flye_assembly_polished.bam \
+> analysis/evaluation/quast/without_ref3/reads_stats/flye_assembly_polished.stat 2>> \
+analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+quast-5.2.0/quast_libs/bedtools/bin/bedtools bamtobed -i analysis/evaluation/quast/without_ref3/reads_stats/temp_output/flye_assembly_polished.bam \
+> analysis/evaluation/quast/without_ref3/reads_stats/temp_output/flye_assembly_polished.bed \
+2>> analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+quast-5.2.0/quast_libs/sambamba/sambamba_linux flagstat -t 4 analysis/evaluation/quast/without_ref3/reads_stats/temp_output/flye_assembly.bam \
+> analysis/evaluation/quast/without_ref3/reads_stats/flye_assembly.stat 2>> analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+/data/users/grochat/genome_assembly_course/quast-5.2.0/quast_libs/sambamba/sambamba_linux \
+view -t 4 -h canu_assembly.bam > canu_assembly.sam 2>> /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+sort -k1,1 -k2,2n analysis/evaluation/quast/without_ref3/reads_stats/temp_output/flye_assembly_polished.bed \
+> analysis/evaluation/quast/without_ref3/reads_stats/temp_output/flye_assembly_polished.sorted.bed \
+2>> analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+quast-5.2.0/quast_libs/bedtools/bin/bedtools bamtobed -i analysis/evaluation/quast/without_ref3/reads_stats/temp_output/flye_assembly.bam \
+> analysis/evaluation/quast/without_ref3/reads_stats/temp_output/flye_assembly.bed \
+2>> analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+sort -k1,1 -k2,2n analysis/evaluation/quast/without_ref3/reads_stats/temp_output/flye_assembly.bed \
+> analysis/evaluation/quast/without_ref3/reads_stats/temp_output/flye_assembly.sorted.bed \
+2>> analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+  1  Done.
+quast-5.2.0/quast_libs/sambamba/sambamba_linux view -H -S analysis/evaluation/quast/without_ref3/reads_stats/temp_output/canu_assembly.sam \
+> analysis/evaluation/quast/without_ref3/reads_stats/canu_assembly.sam.header 2>> \
+analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+  1  Sorting SAM-file...
+quast-5.2.0/quast_libs/sambamba/sambamba_linux view -t 4 -h -S -f bam analysis/evaluation/quast/without_ref3/reads_stats/temp_output/canu_assembly_polished.all.correct.sam \
+> analysis/evaluation/quast/without_ref3/reads_stats/temp_output/canu_assembly_polished.bam \
+2>> analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+quast-5.2.0/quast_libs/bedtools/bin/bedtools genomecov -i analysis/evaluation/quast/without_ref3/reads_stats/temp_output/flye_assembly_polished.sorted.bed \
+-g analysis/evaluation/quast/without_ref3/quast_corrected_input/flye_assembly_polished.fasta.fai \
+> analysis/evaluation/quast/without_ref3/reads_stats/temp_output/flye_assembly_polished.genomecov \
+2>> analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+  4  Analysis is finished.
+quast-5.2.0/quast_libs/bedtools/bin/bedtools genomecov -i analysis/evaluation/quast/without_ref3/reads_stats/temp_output/flye_assembly.sorted.bed \
+-g analysis/evaluation/quast/without_ref3/quast_corrected_input/flye_assembly.fasta.fai \
+> analysis/evaluation/quast/without_ref3/reads_stats/temp_output/flye_assembly.genomecov \
+2>> analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+  3  Analysis is finished.
+quast-5.2.0/quast_libs/sambamba/sambamba_linux view -t 4 -h -S -f bam analysis/evaluation/quast/without_ref3/reads_stats/temp_output/canu_assembly.all.correct.sam \
+> analysis/evaluation/quast/without_ref3/reads_stats/temp_output/canu_assembly.bam \
+2>> analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+quast-5.2.0/quast_libs/sambamba/sambamba_linux flagstat -t 4 analysis/evaluation/quast/without_ref3/reads_stats/temp_output/canu_assembly_polished.bam \
+> analysis/evaluation/quast/without_ref3/reads_stats/canu_assembly_polished.stat 2>> \
+analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+quast-5.2.0/quast_libs/bedtools/bin/bedtools bamtobed -i analysis/evaluation/quast/without_ref3/reads_stats/temp_output/canu_assembly_polished.bam \
+> analysis/evaluation/quast/without_ref3/reads_stats/temp_output/canu_assembly_polished.bed \
+2>> analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+sort -k1,1 -k2,2n analysis/evaluation/quast/without_ref3/reads_stats/temp_output/canu_assembly_polished.bed \
+> analysis/evaluation/quast/without_ref3/reads_stats/temp_output/canu_assembly_polished.sorted.bed \
+2>> analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+quast-5.2.0/quast_libs/bedtools/bin/bedtools genomecov -i analysis/evaluation/quast/without_ref3/reads_stats/temp_output/canu_assembly_polished.sorted.bed \
+-g analysis/evaluation/quast/without_ref3/quast_corrected_input/canu_assembly_polished.fasta.fai \
+> analysis/evaluation/quast/without_ref3/reads_stats/temp_output/canu_assembly_polished.genomecov \
+2>> analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+quast-5.2.0/quast_libs/sambamba/sambamba_linux flagstat -t 4 analysis/evaluation/quast/without_ref3/reads_stats/temp_output/canu_assembly.bam \
+> analysis/evaluation/quast/without_ref3/reads_stats/canu_assembly.stat 2>> analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+  2  Analysis is finished.
+quast-5.2.0/quast_libs/bedtools/bin/bedtools bamtobed -i analysis/evaluation/quast/without_ref3/reads_stats/temp_output/canu_assembly.bam \
+> analysis/evaluation/quast/without_ref3/reads_stats/temp_output/canu_assembly.bed \
+2>> analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+sort -k1,1 -k2,2n analysis/evaluation/quast/without_ref3/reads_stats/temp_output/canu_assembly.bed \
+> analysis/evaluation/quast/without_ref3/reads_stats/temp_output/canu_assembly.sorted.bed \
+2>> analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+quast-5.2.0/quast_libs/bedtools/bin/bedtools genomecov -i analysis/evaluation/quast/without_ref3/reads_stats/temp_output/canu_assembly.sorted.bed \
+-g analysis/evaluation/quast/without_ref3/quast_corrected_input/canu_assembly.fasta.fai \
+> analysis/evaluation/quast/without_ref3/reads_stats/temp_output/canu_assembly.genomecov \
+2>> analysis/evaluation/quast/without_ref3/reads_stats/reads_stats.err
+  1  Analysis is finished.
+  Creating total report...
+    saved to /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/reads_stats/reads_report.txt, reads_report.tsv, and reads_report.tex
+Done.
 
-2023-10-05 23:17:37
+2023-10-10 17:52:05
 Running Basic statistics processor...
   Estimated reference length = 135000000
   Contig files: 
@@ -43,53 +294,49 @@ Running Basic statistics processor...
     2  canu_assembly_polished
     3  flye_assembly
     4  flye_assembly_polished
-    5  trinity_assembly
   Calculating N50 and L50...
     1  canu_assembly, N50 = 3435125, L50 = 10, auN = 4810862.4, Total length = 122973098, GC % = 36.27, # N's per 100 kbp =  0.00
     2  canu_assembly_polished, N50 = 3436535, L50 = 10, auN = 4813051.9, Total length = 122996456, GC % = 36.26, # N's per 100 kbp =  0.00
     3  flye_assembly, N50 = 14082887, L50 = 5, auN = 12051185.8, Total length = 119869541, GC % = 36.05, # N's per 100 kbp =  1.00
     4  flye_assembly_polished, N50 = 14082808, L50 = 5, auN = 12051151.6, Total length = 119856063, GC % = 36.05, # N's per 100 kbp =  0.71
-    5  trinity_assembly, N50 = 3742, L50 = 1418, auN = 4042.8, Total length = 13022569, GC % = 42.44, # N's per 100 kbp =  0.00
   Drawing Nx plot...
-    saved to /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/basic_stats/Nx_plot.pdf
+    saved to /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/basic_stats/Nx_plot.pdf
   Drawing NGx plot...
-    saved to /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/basic_stats/NGx_plot.pdf
+    saved to /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/basic_stats/NGx_plot.pdf
   Drawing cumulative plot...
-    saved to /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/basic_stats/cumulative_plot.pdf
+    saved to /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/basic_stats/cumulative_plot.pdf
   Drawing GC content plot...
-    saved to /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/basic_stats/GC_content_plot.pdf
+    saved to /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/basic_stats/GC_content_plot.pdf
   Drawing canu_assembly GC content plot...
-    saved to /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/basic_stats/canu_assembly_GC_content_plot.pdf
+    saved to /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/basic_stats/canu_assembly_GC_content_plot.pdf
   Drawing canu_assembly_polished GC content plot...
-    saved to /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/basic_stats/canu_assembly_polished_GC_content_plot.pdf
+    saved to /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/basic_stats/canu_assembly_polished_GC_content_plot.pdf
   Drawing flye_assembly GC content plot...
-    saved to /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/basic_stats/flye_assembly_GC_content_plot.pdf
+    saved to /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/basic_stats/flye_assembly_GC_content_plot.pdf
   Drawing flye_assembly_polished GC content plot...
-    saved to /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/basic_stats/flye_assembly_polished_GC_content_plot.pdf
-  Drawing trinity_assembly GC content plot...
-    saved to /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/basic_stats/trinity_assembly_GC_content_plot.pdf
+    saved to /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/basic_stats/flye_assembly_polished_GC_content_plot.pdf
 Done.
 
 NOTICE: Genes are not predicted by default. Use --gene-finding or --glimmer option to enable it.
 
-2023-10-05 23:18:02
+2023-10-10 17:52:36
 Creating large visual summaries...
 This may take a while: press Ctrl-C to skip this step..
   1 of 2: Creating PDF with all tables and plots...
   2 of 2: Creating Icarus viewers...
 Done
 
-2023-10-05 23:18:10
+2023-10-10 17:52:44
 RESULTS:
-  Text versions of total report are saved to /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/report.txt, report.tsv, and report.tex
-  Text versions of transposed total report are saved to /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/transposed_report.txt, transposed_report.tsv, and transposed_report.tex
-  HTML version (interactive tables and plots) is saved to /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/report.html
-  PDF version (tables and plots) is saved to /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/report.pdf
-  Icarus (contig browser) is saved to /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/icarus.html
-  Log is saved to /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/quast.log
+  Text versions of total report are saved to /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/report.txt, report.tsv, and report.tex
+  Text versions of transposed total report are saved to /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/transposed_report.txt, transposed_report.tsv, and transposed_report.tex
+  HTML version (interactive tables and plots) is saved to /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/report.html
+  PDF version (tables and plots) is saved to /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/report.pdf
+  Icarus (contig browser) is saved to /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/icarus.html
+  Log is saved to /data/users/grochat/genome_assembly_course/analysis/evaluation/quast/without_ref3/quast.log
 
-Finished: 2023-10-05 23:18:10
-Elapsed time: 0:04:05.003623
-NOTICEs: 1; WARNINGs: 2; non-fatal ERRORs: 0
+Finished: 2023-10-10 17:52:44
+Elapsed time: 9:05:42.970128
+NOTICEs: 1; WARNINGs: 1; non-fatal ERRORs: 0
 
 Thank you for using QUAST!
