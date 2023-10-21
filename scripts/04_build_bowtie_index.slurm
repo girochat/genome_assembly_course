@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # This script builds the BowTie2 (version 2.3.4.1) index of assembly file(s) and output the index in the working directory.
-# Usage: sbatch 04_build_bowtie_index.slurm <list of assemblies>
+# Usage: sbatch 04_build_bowtie_index.slurm <assembly directory>
 
 #SBATCH --array=0-2
 #SBATCH --cpus-per-task=4
@@ -18,13 +18,17 @@
 module add UHTS/Aligner/bowtie2/2.3.4.1
 
 # Get assembly files given in argument
-assemblies=($@)
+ASSEMBLY_DIR=$1
+assemblies=$(ls ${ASSEMBLY_DIR}/*.fasta)
 
 # Get prefix for index from assembly filename
 prefix=$(basename ${assemblies[$SLURM_ARRAY_TASK_ID]} .fasta)
 
+# Go to assembly directory to output index
+cd ${ASSEMBLY_DIR}
+
 # Build assembly index with BowTie2
 # Note: index will be saved in same directory as assembly file
-bowtie2-build --threads 4 ${assemblies[$SLURM_ARRAY_TASK_ID]} ${prefix}
+bowtie2-build --threads 4 ${prefix}.fasta ${prefix}
 
 

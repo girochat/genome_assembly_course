@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 # This script launches a genome assembly evaluation with BUSCO (version 4.1.4).
-# Usage: sbatch 08_busco_evaluation.slurm <assembly directory> <output directory> <analysis mode> <lineage>
+# Usage: sbatch 09_busco_evaluation.slurm <assembly directory> <output directory> <analysis mode> <lineage>
 
-#SBATCH --cpus-per-task=4
-#SBATCH --mem=40G
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=64G
 #SBATCH --time=12:00:00
 #SBATCH --job-name=busco_evaluation
 #SBATCH --mail-user=giliane.rochat@students.unibe.ch

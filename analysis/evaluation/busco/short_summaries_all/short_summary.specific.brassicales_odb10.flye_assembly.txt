@@ -1,0 +1,14 @@
+# BUSCO version is: 4.1.4 
+# The lineage dataset is: brassicales_odb10 (Creation date: 2020-08-05, number of species: 10, number of BUSCOs: 4596)
+# Summarized benchmarking in BUSCO notation for file data/assembly/flye_assembly.fasta
+# BUSCO was run in mode: genome
+
+	***** Results: *****
+
+	C:98.0%[S:96.9%,D:1.1%],F:0.4%,M:1.6%,n:4596	   
+	4504	Complete BUSCOs (C)			   
+	4452	Complete and single-copy BUSCOs (S)	   
+	52	Complete and duplicated BUSCOs (D)	   
+	18	Fragmented BUSCOs (F)			   
+	74	Missing BUSCOs (M)			   
+	4596	Total BUSCO groups searched		   
