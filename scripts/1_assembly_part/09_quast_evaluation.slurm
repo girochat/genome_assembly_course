@@ -5,7 +5,7 @@
 
 #SBATCH --cpus-per-task=20
 #SBATCH --mem=50G
-#SBATCH --time=1-00:00:00
+#SBATCH --time=2-00:00:00
 #SBATCH --job-name=quast_evaluation
 #SBATCH --mail-user=giliane.rochat@students.unibe.ch
 #SBATCH --mail-type=begin,end,fail
@@ -21,9 +21,17 @@ assemblies=$(ls ${ASSEMBLY_DIR}/*.fasta)
 OUTPUT_DIR=$2
 reference=$3
 
+# Store path to Illumina PE short reads
+read1=data/reads/genome/Illumina/ERR3624575_1_modif.fastq.gz
+read2=data/reads/genome/Illumina/ERR3624575_2_modif.fastq.gz
+
 # Define absolute path to references
-READS_DIR=/data/courses/assembly-annotation-course/raw_data/Sha/participant_5/
+PACBIO_DIR=/data/courses/assembly-annotation-course/raw_data/Sha/participant_5/pacbio/
 REF_DIR=/data/courses/assembly-annotation-course/references/
+
+# Store path to PacBio reads
+pacbio1=ERR3415830.fastq.gz
+pacbio2=ERR3415831.fastq.gz
 
 # Evaluate genome assembly using QUAST
 # --large option : for genome with size > 100M. Automatically applies --eukaryote --min-contig 3000 --min-alignment 500 --extensive-mis-size 7000 options
@@ -36,19 +44,19 @@ REF_DIR=/data/courses/assembly-annotation-course/references/
 if [ $reference -eq 0 ]
 then
 	# Run LG-QUAST without reference genome
-	apptainer exec --bind $READS_DIR:/mnt/reads /data/courses/assembly-annotation-course/containers/quast_5.1.0rc1.sif \
-	python3 $PWD/quast-5.2.0/quast.py \
+	apptainer exec --bind $PACBIO_DIR:/mnt/pacbio $PWD/scripts/misc/quast.sif \
+	python3 $PWD/scripts/misc/quast-5.2.0/quast.py \
 	-o $PWD/${OUTPUT_DIR} --threads 20 --large --est-ref-size 128000000 \
-	--pe1 $PWD/data/reads/genome/Illumina/ERR3624575_1_modif.fastq.gz --pe2 $PWD/data/reads/genome/Illumina/ERR3624575_2_modif.fastq.gz \
-	--pacbio /mnt/reads/pacbio/ERR3415830.fastq.gz --pacbio /mnt/reads/pacbio/ERR3415831.fastq.gz \
+	--pe1 $PWD/$read1 --pe2 $PWD/$read2 \
+	--pacbio /mnt/pacbio/$pacbio1 --pacbio /mnt/pacbio/$pacbio2 \
 	${assemblies} 
 else
 	# Run LG-QUAST with reference genome
-	apptainer exec --bind $READS_DIR:/mnt/reads,$REF_DIR:/mnt/reference /data/courses/assembly-annotation-course/containers/quast_5.1.0rc1.sif \
-	python3 $PWD/quast-5.2.0/quast.py \
+	apptainer exec --bind $PACBIO_DIR:/mnt/pacbio,$REF_DIR:/mnt/reference $PWD/scripts/misc/quast2.sif \
+	python3 $PWD/scripts/misc/quast-5.2.0/quast.py \
 	-r $PWD/data/reference/ref_genome.fa --features /mnt/reference/TAIR10_GFF3_genes.gff \
-	-o $PWD/${OUTPUT_DIR} --threads 20 --large --no-sv --upper-bound-assembly \
-	--pe1 $PWD/data/reads/genome/Illumina/ERR3624575_1_modif.fastq.gz --pe2 $PWD/data/reads/genome/Illumina/ERR3624575_2_modif.fastq.gz\
-	--pacbio /mnt/reads/pacbio/ERR3415830.fastq.gz --pacbio /mnt/reads/pacbio/ERR3415831.fastq.gz \
+	-o $PWD/${OUTPUT_DIR} --threads 20 --large --upper-bound \
+	--pe1 $PWD/$read1 --pe2 $PWD/$read2 \
+	--pacbio /mnt/pacbio/$pacbio1 --pacbio /mnt/pacbio/$pacbio2 \
 	${assemblies}
 fi
