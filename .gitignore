@@ -2,7 +2,14 @@ analysis/assembly
 analysis/QC/jellyfish/
 analysis/evaluation/
 analysis/genome_comparison/
+analysis/blastp/
+analysis/genespace/
+scripts/misc/genespace_1.1.4.sif
+scripts/misc/quast.sif
+scripts/misc/quast-5.2.0/
+scripts/misc/MCScanX/
 .cache/
 data/
+log/
 busco_downloads/
 R/
