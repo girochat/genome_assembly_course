@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # This script determines the degree of divergence of TE sequence from mother sequence (global consensus) by parsing RepeatMasker output with parseRM.pl script (Parsing-RepeatMasker-Outputs GitHub repository).
-# Usage: sbatch 03_deterine_divergence.slurm <EDTA *anno/*.mod.out file> <output directory> <parseRM script directory> 
+# Usage: sbatch 03_determine_divergence.slurm <EDTA *anno/*.mod.out file> <output directory> <parseRM script directory> 
 
 #SBATCH --cpus-per-task=10
 #SBATCH --mem=5G
@@ -14,7 +14,7 @@
 #SBATCH --partition=pall
 
 # Get EDTA file, output directory and script directory from arguments
-file=$(realpath $1)
+edta_file=$(realpath $1)
 OUTPUT_DIR=$2
 SCRIPT_DIR=$(realpath $3)
 
@@ -22,5 +22,6 @@ SCRIPT_DIR=$(realpath $3)
 cd ${OUTPUT_DIR}
 
 # Estimate sequence divergence
-perl ${SCRIPT_DIR}/parseRM.pl -i $file -l 50,1 -v
+# Option -l: define bin interval as 1%, up to 50%
+perl ${SCRIPT_DIR}/parseRM.pl -i ${edta_file} -l 50,1 -v
 
