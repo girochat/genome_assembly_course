@@ -29,3 +29,9 @@ The repository is organised into three main directories:
 - analysis directory: all the results from any analysis that was performed
   
 More information can be found in the README section of each directory.
+
+## 
+Path for the repository of this project on the IBU cluster: `/data/users/grochat/genome_assembly_course/`  
+Link for the repository of this project on GitHub.com : <https://github.com/girochat/genome_assembly_course/>  
+  
+Note: all the data is available on the IBU cluster but the GitHub repository contains only data of reasonable size (less than 100Mb) due to repository size limits.
