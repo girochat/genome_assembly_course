@@ -2,7 +2,7 @@
 
 # This script generates a dot plot from the assembly-to-reference alignment output of nucmer using mummerplot from MUMmer (beta version 4.0.0).
 # Note: multiple assembly alignments can be run using slurm array.
-# Usage: sbatch 12_generate_dotplot.slurm <assembly directory> <reference genome file> <output directory> <delta files directory>
+# Usage: sbatch 12_generate_dotplot.slurm <assembly directory> <reference genome file> <output directory>
 
 #SBATCH --array=0-3
 #SBATCH --cpus-per-task=4

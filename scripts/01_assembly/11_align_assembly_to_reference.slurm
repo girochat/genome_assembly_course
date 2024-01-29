@@ -27,6 +27,7 @@ module add UHTS/Analysis/mummer/4.0.0beta1
 
 # Align assemblies to reference genome using Nucmer
 # --mincluster option: minimal length of a cluster of matches
+# --minalign option: minimal length of total alignment for a query sequence
 # --breaklen option: minimal extension length that is tried before giving up
 # --prefix option: output file name
 nucmer --mincluster 1000 --delta ${OUTPUT_DIR}/${filename}.delta --breaklen 1000 ${reference} ${assemblies[$SLURM_ARRAY_TASK_ID]}
