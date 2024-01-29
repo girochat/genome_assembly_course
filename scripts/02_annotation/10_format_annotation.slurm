@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# This script prepares data for a GENESPACE analysis of gene annotation. It extracts gene coordinates from gene annotation GFF file in bed format
+# and the corresponding protein sequences in fasta format. Note: only sequences of the ten longest contigs of the assembly are considered.
+# Usage: sbatch 10_format_annotation.slurm <genomic feature GFF file> <protein sequence FASTA file> <GENESPACE directory> <contig name file>
+
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=1G
 #SBATCH --time=01:00:00
@@ -10,13 +14,17 @@
 #SBATCH --error=/data/users/grochat/genome_assembly_course/log/error_format_%j.e
 #SBATCH --partition=pall
 
+# Get GFF file, FASTA file, GENESPACE directory and contig names file from script arguments 
 accession_maker_noseq=$1
 accession_maker_protein=$2
-accession_bed_output=$3.bed  #analysis/genespace/bed/$3.bed 
-accession_fasta_output=$3.fa   #analysis/genespace/peptide/$3.fa 
+accession=$(basename $1 .all.maker.noseq.gff.renamed.gff)
+accession_bed_output=$3/${accession}.bed 
+accession_fasta_output=$3/${accession}.fa 
 
+# Store contig names in an array
 contig_names=($(cat $4))
 
+# Extract gene coordinates in BED format from GFF file only for ten longest contigs 
 awk -F "[\t;=]" -v c="${contig_names[*]}" 'BEGIN{
 	split(c, names, " ")
 	for (name in names) {

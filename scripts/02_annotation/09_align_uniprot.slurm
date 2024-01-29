@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# This script aligns protein sequences from MAKER annotation to protein sequences of Swissprot database using blast+ command (version 2.10.1).
+# Usage: sbatch 09_align_uniprot.slurm <uniprot protein sequences> <MAKER protein sequences> <MAKER full annotation (GFF)> <output directory> 
+
 #SBATCH --cpus-per-task=10
 #SBATCH --mem=30G
 #SBATCH --time=02:00:00
@@ -10,6 +13,7 @@
 #SBATCH --error=/data/users/grochat/genome_assembly_course/log/error_blastp_%j.e
 #SBATCH --partition=pall
 
+# Get Uniprot and MAKER protein sequences, full MAKER annotation GFF file and output directory from script arguments
 uniprot_ref=$1
 maker_protein_file=$2
 maker_noseq_gff=$3

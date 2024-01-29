@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # This script aligns RT protein sequences of TE superfamilies with clustal (version 1.2.4) and builds a phylogenetic tree with FastTree (version 2.1.10).
-# Usage: sbatch 04_create_phylo_tree.slurm <RT protein sequences (fasta)> <output directory> <superfamily name>
+# Usage: sbatch 06_create_phylo_tree.slurm <RT protein sequences (fasta)> <output directory> <superfamily name>
 
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=5G
@@ -18,12 +18,14 @@ prot_seq=$1
 OUTPUT_DIR=$2
 family=$3
 
-# Align sequences with clustal
+# Import clustal omega module
 module add SequenceAnalysis/MultipleSequenceAlignment/clustal-omega/1.2.4
 
+# Align sequences with clustal
 clustalo -i ${prot_seq} -o ${OUTPUT_DIR}/${family}_prot_alignment.fasta
 
-# Build tree with FastTree
+# Import FastTree module
 module add Phylogeny/FastTree/2.1.10 
 
+# Build tree with FastTree
 FastTree -out ${OUTPUT_DIR}/${family}_alignment.tree ${OUTPUT_DIR}/${family}_prot_alignment.fasta

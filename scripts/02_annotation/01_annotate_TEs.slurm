@@ -14,6 +14,7 @@
 #SBATCH --partition=pall
 
 # Get genome/assembly file, coding regions annotation and output directory from arguments
+# Note: genome file necessary in output directory when using container
 genome_file=$(basename $1)
 coding_regions_file=$(basename $2)
 OUTPUT_DIR=$(dirname $1)
@@ -23,5 +24,10 @@ cd ${OUTPUT_DIR}
 
 # Run EDTA
 singularity exec /data/courses/assembly-annotation-course/containers2/EDTA_v1.9.6.sif EDTA.pl \
---genome $PWD/${genome_file} --species others --step all --cds $PWD/${coding_regions_file} --anno 1 --threads 50
+--genome $PWD/${genome_file} \
+--species others \
+--step all \
+--cds $PWD/${coding_regions_file} \
+--anno 1 \
+--threads 50
 

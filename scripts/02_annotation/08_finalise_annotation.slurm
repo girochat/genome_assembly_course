@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# This script finalises MAKER output files for the gene annotation. It merges all protein sequences GFF files into one as well as all genomic features GFF files. 
+# It also renames the protein sequences with shorter ID and keep a map between old and new IDs.
+# Usage: sbatch 08_finalise_annotation.slurm <assembly name> <MAKER output directory> 
+
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=16G
 #SBATCH --time=01:00:00

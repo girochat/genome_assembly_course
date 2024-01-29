@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # This script performs genome annotation using MAKER (version 3.01.03).
-# Usage: sbatch 05_annotate_genome.slurm <output directory>
+# Usage: sbatch 07_annotate_genome.slurm <output directory>
 
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=1
@@ -15,13 +15,18 @@
 #SBATCH --error=/data/users/grochat/genome_assembly_course/log/error_genome_annotation_%j.e
 #SBATCH --partition=pall
 
+# Save slurm variables in environment variables
 export SLURM_EXPORT_ENV=ALL
 
+# Go to the output directory
 OUTPUT_DIR=$1
 cd ${OUTPUT_DIR}
 
+# Load MAKER module to run MPI
 module load SequenceAnalysis/GenePrediction/maker/2.31.9
 
+# Run MAKER with parallelisation using MPI
+# Note: required first to build and edit MAKER configuration files (command "maker -CTL")
 mpiexec -n 16 singularity exec \
 --bind $SCRATCH:/TMP \
 --bind /data/courses/assembly-annotation-course/CDS_annotation:/CDS_annotation \
