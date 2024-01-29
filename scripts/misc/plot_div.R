@@ -1,4 +1,4 @@
-## laod packages
+## load packages
 library(dplyr)
 library(data.table)
 library(tidyr)
@@ -7,7 +7,7 @@ library(ggplot2)
 library(cowplot)
 
 ## set working directory
-setwd("/data/users/grochat/genome_assembly_course/analysis/TE_divergence/")
+setwd("/data/users/grochat/genome_assembly_course/analysis/TE/dynamics/")
 
 ## Import the modified output from parseRM.pl ending with "landscape.Div.Rname.tab
 dat <- fread("Sha_flye_polished.fasta.mod.out.landscape.Div.Rname.tab")
@@ -59,11 +59,15 @@ p1 <- ggplot(rep_table.m, aes(fill = Superfamily, x = age, weight = value / 1000
     geom_bar() +
     cowplot::theme_cowplot() +
     geom_vline(
-        xintercept = 11.48, color = "red",
+        xintercept = 12, color = "red",
+        linetype = "dashed", linewidth = 1
+    ) + 
+    geom_vline(
+        xintercept = 23, color = "red",
         linetype = "dashed", linewidth = 1
     ) +
     geom_vline(
-        xintercept = 32.42, color = "blue",
+        xintercept = 35, color = "blue",
         linetype = "dashed", linewidth = 1
     ) +
     scale_fill_brewer(palette = "Paired") +

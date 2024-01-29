@@ -3,4 +3,4 @@ Bootstrap: localimage
 From: /data/users/grochat/genome_assembly_course/scripts/misc/quast.sif
 
 %post
-	apt-get install -y r-base #apt-get update -y && apt-get upgrade -y && apt install -y default-jre
+	apt-get update -y && apt-get upgrade -y && apt-get install -y r-base && apt install -y default-jre
