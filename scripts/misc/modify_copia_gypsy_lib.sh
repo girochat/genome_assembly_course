@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 
-filename=$(basename $1 .tsv)
+# This script modifies a TE superfamily (Copia or Gypsy) library TSV file to keep only relevant columns.
+# Usage: bash modify_copia_gypsy_lib.sh <superfamily library file>  
 
+# Get file name and data directory
+filename=$(basename $1 .tsv)
+DATA_DIR=$(dirname $1)
+
+# Extract relevant columns from TSV library file
 awk 'BEGIN{ 
         FS="[\t#]"
         OFS="\t" 
@@ -12,5 +18,5 @@ awk 'BEGIN{
         }else{
                 print "name","order","superfamily","clade","complete","domains"
         }
-}' $1 >> ${filename}_modif.tsv
+}' $1 >> ${DATA_DIR}/${filename}_modif.tsv
 
