@@ -26,5 +26,6 @@ This project was part of two courses, "Genome and transcriptome assembly" and "O
 The repository is organised into three main directories:
 - scripts directory: all scripts that were used throughout the workflow of the project
 - data directory: all the data of the project, from raw reads to intermediate data produced during the steps of the project
-- analysis directory: all the results from any analysis that was performed  
+- analysis directory: all the results from any analysis that was performed
+  
 More information can be found in the README section of each directory.
