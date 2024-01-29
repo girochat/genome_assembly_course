@@ -4,6 +4,7 @@ analysis/evaluation/
 analysis/genome_comparison/
 analysis/blastp/
 analysis/genespace/
+analysis/TE
 scripts/misc/genespace_1.1.4.sif
 scripts/misc/quast.sif
 scripts/misc/quast-5.2.0/
